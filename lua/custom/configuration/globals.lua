@@ -25,7 +25,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- do not use builtin matchit.vim and matchparen.vim since we use vim-matchup plugin
 vim.g.loaded_matchit = 1
