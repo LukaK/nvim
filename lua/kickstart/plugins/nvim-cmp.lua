@@ -1,4 +1,6 @@
 -- Autocompletion
+-- TODO: Fix completion keybinding for command line
+-- TODO: Fix warnings etc
 return {
   'hrsh7th/nvim-cmp',
   event = 'InsertEnter',
@@ -33,13 +35,18 @@ return {
     --  nvim-cmp does not ship with all sources by default. They are split
     --  into multiple repos for maintenance purposes.
     'hrsh7th/cmp-nvim-lsp',
-    'hrsh7th/cmp-path',
+    'hrsh7th/cmp-buffer', -- requirement for cmdline
+    'hrsh7th/cmp-path', -- directory path completion
+    'hrsh7th/cmp-cmdline', -- search and cmd completion
+    'hrsh7th/cmp-nvim-lsp-signature-help', -- add function signature when you type
+    'onsails/lspkind-nvim', -- vscode like pictograms ( not working )
   },
   config = function()
     -- See `:help cmp`
     local cmp = require 'cmp'
     local luasnip = require 'luasnip'
     luasnip.config.setup {}
+    local lspkind = require 'lspkind'
 
     cmp.setup {
       snippet = {
@@ -105,7 +112,40 @@ return {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'path' },
+        { name = 'buffer' },
+        { name = 'cmdline' },
+        { name = 'nvim_lsp_signature_help' },
+      },
+      formatting = {
+        format = lspkind.cmp_format {
+          with_text = false,
+          menu = {
+            nvim_lsp = '[Lsp]',
+            luasnip = '[Snip]',
+            path = '[Path]',
+            buffer = '[Buffer]',
+            cmdline = '[Cmd]',
+          },
+        },
       },
     }
+
+    -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+    cmp.setup.cmdline({ '/', '?' }, {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = {
+        { name = 'buffer', opts = { keyword_pattern = [=[[^[:blank:]].*]=] } },
+      },
+    })
+
+    -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+    cmp.setup.cmdline(':', {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = cmp.config.sources({
+        { name = 'path' },
+      }, {
+        { name = 'cmdline' },
+      }),
+    })
   end,
 }

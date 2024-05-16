@@ -14,7 +14,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- Relative number toggle on focus
 vim.api.nvim_create_autocmd({ 'BufEnter', 'FocusGained', 'InsertLeave', 'WinEnter' }, {
-  nested = true,
+  desc = 'Toggle off relative numbers',
+  group = vim.api.nvim_create_augroup('relative-number-toggle', { clear = true }),
+  --  nested = true,
   callback = function()
     if vim.wo.number then
       vim.wo.relativenumber = true
@@ -22,7 +24,9 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'FocusGained', 'InsertLeave', 'WinEnte
   end,
 })
 vim.api.nvim_create_autocmd({ 'BufLeave', 'FocusLost', 'InsertEnter', 'WinLeave' }, {
-  nested = true,
+  desc = 'Toggle on relative numbers',
+  group = vim.api.nvim_create_augroup('relative-number-toggle', { clear = false }),
+  --  nested = true,
   callback = function()
     if vim.wo.number then
       vim.wo.relativenumber = false
@@ -32,13 +36,17 @@ vim.api.nvim_create_autocmd({ 'BufLeave', 'FocusLost', 'InsertEnter', 'WinLeave'
 
 -- Do not use smart case in command line mode, extracted from https://vi.stackexchange.com/a/16511/15292.
 vim.api.nvim_create_autocmd('CmdLineEnter', {
-  nested = true,
+  --  nested = true,
+  desc = 'Toggle off smart case',
+  group = vim.api.nvim_create_augroup('smart-case-toggle', { clear = true }),
   callback = function()
     vim.api.nvim_set_option('smartcase', false)
   end,
 })
 vim.api.nvim_create_autocmd('CmdLineLeave', {
-  nested = true,
+  --  nested = true,
+  desc = 'Toggle on smart case',
+  group = vim.api.nvim_create_augroup('smart-case-toggle', { clear = false }),
   callback = function()
     vim.api.nvim_set_option('smartcase', true)
   end,
@@ -46,7 +54,9 @@ vim.api.nvim_create_autocmd('CmdLineLeave', {
 
 -- Terminal settings
 vim.api.nvim_create_autocmd('TermOpen', {
-  nested = true,
+  --  nested = true,
+  desc = 'Set terminal options, nonumbers and start in insert mode',
+  group = vim.api.nvim_create_augroup('set-terminal-options', { clear = true }),
   callback = function()
     vim.wo.relativenumber = false
     vim.wo.number = false
@@ -56,7 +66,9 @@ vim.api.nvim_create_autocmd('TermOpen', {
 
 -- Display a message when the current file is not in utf-8 format.
 vim.api.nvim_create_autocmd('BufRead', {
-  nested = true,
+  --  nested = true,
+  desc = 'Display message if file is not utf-8 encoded',
+  group = vim.api.nvim_create_augroup('notify-on-file-encoding', { clear = true }),
   callback = function()
     if vim.api.nvim_buf_get_option(0, 'fileencoding') ~= 'utf-8' then
       vim.notify('File not in UTF-8 format!', 'warn', { title = 'nvim-config' })
@@ -83,6 +95,7 @@ vim.api.nvim_create_autocmd({ 'FocusGained', 'CursorHold' }, {
   end,
 })
 
+-- TODO: Rewrite this command
 -- Resume edit position
 vim.cmd [[
   function s:resume_edit_pos() abort
@@ -105,3 +118,12 @@ vim.cmd [[
     autocmd BufReadPost * call s:resume_edit_pos()
   augroup END
 ]]
+
+-- TODO: See if you want to enable this
+-- automatically sync packer packages when saving plugins.lua
+-- vim.cmd([[
+--   augroup packer_user_config
+--     autocmd!
+--     autocmd BufWritePost plugins.lua source <afile> | PackerSync
+--   augroup end
+-- ]])
