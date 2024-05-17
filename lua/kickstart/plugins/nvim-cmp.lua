@@ -35,9 +35,10 @@ return {
     --  nvim-cmp does not ship with all sources by default. They are split
     --  into multiple repos for maintenance purposes.
     'hrsh7th/cmp-nvim-lsp',
-    'hrsh7th/cmp-buffer', -- requirement for cmdline
     'hrsh7th/cmp-path', -- directory path completion
-    'hrsh7th/cmp-cmdline', -- search and cmd completion
+    'hrsh7th/cmp-buffer', -- requirement for cmdline
+    -- FIX: issues with markdown files when inserting text ( see whats up with that )
+    -- 'hrsh7th/cmp-cmdline', -- search and cmd completion
     'hrsh7th/cmp-nvim-lsp-signature-help', -- add function signature when you type
     'onsails/lspkind-nvim', -- vscode like pictograms ( not working )
   },
@@ -113,7 +114,7 @@ return {
         { name = 'luasnip' },
         { name = 'path' },
         { name = 'buffer' },
-        { name = 'cmdline' },
+        -- { name = 'cmdline' },
         { name = 'nvim_lsp_signature_help' },
       },
       formatting = {
@@ -124,28 +125,28 @@ return {
             luasnip = '[Snip]',
             path = '[Path]',
             buffer = '[Buffer]',
-            cmdline = '[Cmd]',
+            -- cmdline = '[Cmd]',
           },
         },
       },
     }
 
-    -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
-    cmp.setup.cmdline({ '/', '?' }, {
-      mapping = cmp.mapping.preset.cmdline(),
-      sources = {
-        { name = 'buffer', opts = { keyword_pattern = [=[[^[:blank:]].*]=] } },
-      },
-    })
-
-    -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-    cmp.setup.cmdline(':', {
-      mapping = cmp.mapping.preset.cmdline(),
-      sources = cmp.config.sources({
-        { name = 'path' },
-      }, {
-        { name = 'cmdline' },
-      }),
-    })
+    -- -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+    -- cmp.setup.cmdline({ '/', '?' }, {
+    --   mapping = cmp.mapping.preset.cmdline(),
+    --   sources = {
+    --     { name = 'buffer', opts = { keyword_pattern = [=[[^[:blank:]].*]=] } },
+    --   },
+    -- })
+    --
+    -- -- -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+    -- cmp.setup.cmdline(':', {
+    --   mapping = cmp.mapping.preset.cmdline(),
+    --   sources = cmp.config.sources({
+    --     { name = 'path' },
+    --   }, {
+    --     { name = 'cmdline' },
+    --   }),
+    -- })
   end,
 }
