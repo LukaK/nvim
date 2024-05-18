@@ -140,19 +140,25 @@ return {
       end,
     })
 
+    -- Customize diagnostics
     -- Change diagnostic signs.
     vim.fn.sign_define('DiagnosticSignError', { text = '✗', texthl = 'DiagnosticSignError' })
     vim.fn.sign_define('DiagnosticSignWarn', { text = '!', texthl = 'DiagnosticSignWarn' })
     vim.fn.sign_define('DiagnosticSignInformation', { text = '', texthl = 'DiagnosticSignInfo' })
     vim.fn.sign_define('DiagnosticSignHint', { text = '', texthl = 'DiagnosticSignHint' })
 
-    -- global config for diagnostic
+    -- Turn off virtual text and underline
     vim.diagnostic.config {
       underline = false,
       virtual_text = false,
       signs = true,
       severity_sort = true,
     }
+
+    -- Change border of documentation hover window, See https://github.com/neovim/neovim/pull/13998.
+    vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
+      border = 'rounded',
+    })
 
     -- LSP servers and clients are able to communicate to each other what features they support.
     --  By default, Neovim doesn't support everything that is in the LSP specification.
