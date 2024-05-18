@@ -14,6 +14,7 @@ return {
     -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
     -- used for completion, annotations and signatures of Neovim apis
     { 'folke/neodev.nvim', opts = {} },
+    { 'b0o/schemastore.nvim' },
   },
   config = function()
     -- Brief aside: **What is LSP?**
@@ -183,6 +184,31 @@ return {
           },
         },
       },
+
+      jsonls = {
+        settings = {
+          json = {
+            schemas = require('schemastore').json.schemas(),
+            validate = { enable = true },
+          },
+        },
+      },
+
+      yamlls = {
+        filetypes = { 'yaml', 'yml' },
+        settings = {
+          yaml = {
+            schemas = require('schemastore').yaml.schemas(),
+          },
+        },
+      },
+
+      bashls = {},
+      dockerls = {},
+      terraformls = {},
+      ansiblels = {},
+      helm_ls = {},
+      -- TODO: Add python language server, see which one to use
     }
 
     -- Ensure the servers and tools above are installed
