@@ -14,6 +14,14 @@ return {
     { '\\', ':Neotree reveal<CR>', { desc = 'NeoTree reveal' } },
   },
   opts = {
+    event_handlers = {
+      {
+        event = 'neo_tree_buffer_enter',
+        handler = function()
+          vim.opt.relativenumber = true
+        end,
+      },
+    },
     filesystem = {
       window = {
         mappings = {
