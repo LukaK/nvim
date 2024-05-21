@@ -1,6 +1,15 @@
--- Adds git related signs to the gutter, as well as utilities for managing changes
+-- TODO: Add neogiv instead of fugitive
+-- TODO: Add DiffView
+-- TODO: Add which key registration to register keys
 
 return {
+
+  {
+    'tpope/vim-fugitive',
+    keys = {
+      { '<leader>g', '<cmd>Git<cr>', { desc = 'Open git management' } },
+    },
+  },
   {
     'lewis6991/gitsigns.nvim',
     opts = {

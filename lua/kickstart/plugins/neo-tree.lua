@@ -14,6 +14,7 @@ return {
     { '\\', ':Neotree reveal<CR>', { desc = 'NeoTree reveal' } },
   },
   opts = {
+    -- add relative numbers to neo-tree
     event_handlers = {
       {
         event = 'neo_tree_buffer_enter',
