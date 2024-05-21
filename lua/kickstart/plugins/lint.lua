@@ -6,7 +6,13 @@ return {
     config = function()
       local lint = require 'lint'
       lint.linters_by_ft = {
-        -- markdown = { 'markdownlint' },
+        markdown = { 'vale' },
+        text = { 'vale' },
+        dockerfile = { 'hadolint' },
+        terraform = { 'tflint' },
+        json = { 'jsonlint' },
+        -- TODO: Add python linter
+        -- TODO: Add yaml linter
       }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
