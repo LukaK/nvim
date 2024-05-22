@@ -228,6 +228,7 @@ return {
       terraformls = {},
       ansiblels = {},
       helm_ls = {},
+      marksman = {}, -- markdown language server
       -- TODO: Add python language server, see which one to use
     }
 
@@ -250,6 +251,8 @@ return {
       'hadolint', -- Used to lint docker files
       'tflint', -- Used to lint terraform files
       'jsonlint', -- Used to lint json files
+      'ansible-lint', -- Used to lint ansible files
+      'yamllint', -- Used to lint yaml files
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

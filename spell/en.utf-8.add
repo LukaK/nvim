@@ -21,3 +21,5 @@ kubelet
 csi
 ebs
 efs
+Synology
+msk
