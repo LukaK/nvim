@@ -16,3 +16,8 @@ api
 IAM
 Iam
 iam
+cidr
+kubelet
+csi
+ebs
+efs
