@@ -1,4 +1,4 @@
-# Neovim configuration for personal use
+<h1 align="center"> Personal neovim configuration </h1>
 
 ### Install External Dependencies
 
