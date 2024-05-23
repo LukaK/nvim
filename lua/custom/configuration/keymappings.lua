@@ -13,10 +13,10 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
---
+
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
--- or just use <C-\><C-n> to exit terminal mode
-vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+-- Use Esc to quit builtin terminal
+-- vim.keymap.set('t', '<ESC>', '<C-\\><C-n>', { desc = 'Quit builtin terminal' })
 
 -- Disable arrow keys in normal mode
 vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
@@ -44,10 +44,6 @@ vim.keymap.set('x', '<', '<gv', { desc = 'Decrease indentation in visual mode co
 -- Search in selected region
 vim.keymap.set('x', '/', [[:<C-U>call feedkeys('/\%>'.(line("'<")-1).'l\%<'.(line("'>")+1)."l")<CR>]], { desc = 'Search in selected region' })
 
--- Use Esc to quit builtin terminal
-vim.keymap.set('t', '<ESC>', '<C-\\><C-n>', { desc = 'Quit builtin terminal' })
-
--- Toggle spell checking (autosave does not play well with z=, so we disable it
 -- when we are doing spell checking)
 vim.keymap.set('n', '<F3>', ':<C-U> set spell!<CR>', { desc = 'Enable spell checking' })
 vim.keymap.set('i', '<F3>', ':<C-U> set spell!<CR>', { desc = 'Enable spell checking' })
