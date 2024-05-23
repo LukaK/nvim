@@ -16,7 +16,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- Use Esc to quit builtin terminal
--- vim.keymap.set('t', '<ESC>', '<C-\\><C-n>', { desc = 'Quit builtin terminal' })
+vim.keymap.set('t', '<ESC><ESC>', '<C-\\><C-n>', { desc = 'Quit builtin terminal' })
 
 -- Disable arrow keys in normal mode
 vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
