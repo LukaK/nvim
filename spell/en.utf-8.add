@@ -24,3 +24,7 @@ efs
 Synology
 msk
 neovim
+lsp
+systemd
+pacman
+nlp
