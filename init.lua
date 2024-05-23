@@ -1,5 +1,5 @@
 -- load options, keymaps, autocommands etc...
-require 'custom.configuration'
+require 'configuration'
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
