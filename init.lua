@@ -1,3 +1,4 @@
+-- TODO: Reorganize repository
 -- load options, keymaps, autocommands etc...
 require 'configuration'
 
