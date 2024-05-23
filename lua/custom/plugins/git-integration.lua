@@ -1,4 +1,3 @@
--- TODO: Add neogiv instead of fugitive
 -- TODO: Add DiffView
 -- TODO: Add which key registration to register keys
 
