@@ -248,11 +248,12 @@ return {
       'black', -- Used to format Python code
       'isort', -- Used to format Python imports
       'vale', -- Used to lint Markdown files
-      'hadolint', -- Used to lint docker files
-      'tflint', -- Used to lint terraform files
-      'jsonlint', -- Used to lint json files
-      'ansible-lint', -- Used to lint ansible files
-      'yamllint', -- Used to lint yaml files
+      'hadolint', -- Linter docker file
+      'tflint', -- Linter terraform
+      'jsonlint', -- Linter json
+      'ansible-lint', -- Linter ansible
+      'yamllint', -- LInter yaml
+      'clj-kondo', -- Linter clojure
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

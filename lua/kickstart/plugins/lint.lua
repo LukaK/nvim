@@ -1,3 +1,7 @@
+-- Linting
+-- complements the built-in language server client for languages where
+-- there are no language servers, or where standalone linters provide better results.
+
 return {
 
   { -- Linting
@@ -5,15 +9,10 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       local lint = require 'lint'
-      lint.linters_by_ft = {
-        markdown = { 'vale' },
-        text = { 'vale' },
-        dockerfile = { 'hadolint' },
-        terraform = { 'tflint' },
-        json = { 'jsonlint' },
-        yaml = { 'yamllint' },
-        -- TODO: Add python linter
-      }
+      lint.linters_by_ft = lint.linters_by_ft or {}
+      lint.linters_by_ft['inko'] = nil
+      lint.linters_by_ft['janet'] = nil
+      lint.linters_by_ft['ruby'] = nil
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
       -- instead set linters_by_ft like this:
