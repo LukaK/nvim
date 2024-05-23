@@ -229,7 +229,7 @@ return {
       ansiblels = {},
       helm_ls = {},
       marksman = {}, -- markdown language server
-      -- TODO: Add python language server, see which one to use
+      pyright = {},
     }
 
     -- Ensure the servers and tools above are installed
