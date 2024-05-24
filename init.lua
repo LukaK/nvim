@@ -22,22 +22,22 @@ require('lazy').setup({
   { 'numToStr/Comment.nvim', opts = {} },
 
   -- Useful plugin to show you pending keybinds.
-  require 'kickstart.plugins.which-key',
+  require 'core.plugins.which-key',
 
   -- Fuzzy finder ( files, lsp, etc. )
-  require 'kickstart.plugins.telescope',
+  require 'core.plugins.telescope',
 
   -- LSP Configuration & Plugins ( Language Servers )
-  require 'kickstart.plugins.lsp',
+  require 'core.plugins.lsp',
 
   -- Autoformat
-  require 'kickstart.plugins.conform',
+  require 'core.plugins.conform',
 
   -- Autocompletion
-  require 'kickstart.plugins.nvim-cmp',
+  require 'core.plugins.nvim-cmp',
 
   -- Colorscheme configuration
-  require 'kickstart.plugins.colorscheme',
+  require 'core.plugins.colorscheme',
 
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
@@ -84,13 +84,13 @@ require('lazy').setup({
   },
 
   -- Highlight, edit, and navigate code
-  require 'kickstart.plugins.nvim-treesitter',
+  require 'core.plugins.nvim-treesitter',
 
-  -- require 'kickstart.plugins.debug',
-  require 'kickstart.plugins.indent_line',
-  require 'kickstart.plugins.lint',
-  require 'kickstart.plugins.autopairs',
-  require 'kickstart.plugins.neo-tree',
+  -- require 'core.plugins.debug',
+  require 'core.plugins.indent_line',
+  require 'core.plugins.lint',
+  require 'core.plugins.autopairs',
+  require 'core.plugins.neo-tree',
 
   --  Add your plugins to `lua/custom/plugins/*.lua` to get going.
   --  For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
