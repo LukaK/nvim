@@ -62,6 +62,11 @@ return {
       --   },
       -- },
       -- pickers = {}
+      defaults = {
+        mappings = {
+          i = { ['<c-s>'] = 'select_vertical' },
+        },
+      },
       extensions = {
         ['ui-select'] = {
           require('telescope.themes').get_dropdown(),
