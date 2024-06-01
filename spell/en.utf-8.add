@@ -52,3 +52,12 @@ cni
 dns
 ipv4
 nlb
+iscsi
+ldap
+yaml
+Dockerfile
+vcs
+init
+schedulable
+kubeadm
+K8s
