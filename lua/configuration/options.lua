@@ -144,3 +144,8 @@ if vim.fn.executable 'rg' then
   vim.opt.grepprg = 'rg --vimgrep --no-heading --smart-case'
   vim.opt.grepformat = '%f:%l:%c:%m'
 end
+
+-- add filetypes
+vim.filetype.add {
+  extension = { tf = 'terraform' },
+}

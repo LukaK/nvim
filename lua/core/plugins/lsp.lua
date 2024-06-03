@@ -275,7 +275,11 @@ return {
 
       bashls = {},
       dockerls = {},
-      terraformls = {},
+
+      -- NOTE: autocompletion is not working (https://github.com/williamboman/mason-lspconfig.nvim/issues/224)
+      terraformls = {
+        filetypes = { 'terraform' },
+      },
       ansiblels = {},
       helm_ls = {},
       marksman = {}, -- markdown language server
@@ -297,6 +301,7 @@ return {
       'stylua', -- Used to format Lua code
       'black', -- Used to format Python code
       'isort', -- Used to format Python imports
+      'hclfmt', -- Used to format hcl code
       'vale', -- Used to lint Markdown files
       'hadolint', -- Linter docker file
       'tflint', -- Linter terraform
