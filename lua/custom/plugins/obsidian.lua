@@ -11,7 +11,7 @@ return {
       workspaces = {
         {
           name = 'personal',
-          path = '~/Project_reference/Obsidian-archive/KnowledgeBase/',
+          path = '~/Project_reference/SecondBrain',
         },
       },
       mappings = {},
