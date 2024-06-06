@@ -145,6 +145,9 @@ if vim.fn.executable 'rg' then
   vim.opt.grepformat = '%f:%l:%c:%m'
 end
 
+-- set concealment for obsidian plugin
+vim.opt.conceallevel = 2
+
 -- add filetypes
 vim.filetype.add {
   extension = { tf = 'terraform' },
