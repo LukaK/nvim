@@ -76,3 +76,5 @@ nginx
 iptables
 json
 backend
+s3
+cloudfront
