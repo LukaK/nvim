@@ -26,5 +26,8 @@ return {
     build = function()
       vim.fn['mkdp#util#install']()
     end,
+    config = function()
+      vim.keymap.set('n', '<leader>mp', ':MarkdownPreviewToggle<cr>', { desc = '[M]arkdown [P]review' })
+    end,
   },
 }
