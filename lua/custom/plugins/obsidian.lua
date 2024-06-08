@@ -38,8 +38,8 @@ return {
 
       -- formatting title in notes, helper function
       local function format_title()
-        vim.cmd 'g/^# [-a-z]*$/s/\\(\\w\\+\\)/\\u\\1/ge'
-        vim.cmd 'g/^# [-a-zA-Z]*$/s/-/ /ge'
+        vim.cmd 'g/^# [-a-z1-9]*$/s/\\(\\w\\+\\)/\\u\\1/ge'
+        vim.cmd 'g/^# [-a-zA-Z1-9]*$/s/-/ /ge'
         vim.cmd 'nohlsearch'
       end
 
