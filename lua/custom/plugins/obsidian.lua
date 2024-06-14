@@ -19,7 +19,7 @@ return {
         disable_frontmatter = true,
 
         -- templates configuration
-        templates = { folder = 'Templates' },
+        templates = { folder = '0 Meta Folder/Templates' },
 
         -- default location for new notes
         new_notes_location = 'notes_subdir',
@@ -57,6 +57,11 @@ return {
         vim.cmd 'ObsidianTemplate Literature Note'
         format_title()
       end, { desc = '[O]bsidian [L]iterature' })
+
+      vim.keymap.set('n', '<leader>oi', function()
+        vim.cmd 'ObsidianTemplate Index'
+        format_title()
+      end, { desc = '[O]bsidian [I]ndex' })
 
       local telescope_builtin = require 'telescope.builtin'
       -- search main notes
