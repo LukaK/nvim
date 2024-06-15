@@ -43,7 +43,6 @@ return {
         vim.cmd 'nohlsearch'
       end
 
-      vim.keymap.set('n', '<leader>ot', format_title, { desc = '[O]bsidian [T]itle' })
       vim.keymap.set('n', '<leader>oo', ':ObsidianOpen<cr>', { desc = '[O]bsidian [O]pen' })
       vim.keymap.set('n', '<leader>oc', ':ObsidianNew <cr><cr>', { desc = '[O]bsidian [C]reate' })
 
@@ -67,12 +66,12 @@ return {
       local telescope_builtin = require 'telescope.builtin'
       -- search main notes
       vim.keymap.set('n', '<leader>of', function()
-        telescope_builtin.find_files { cwd = '~/Project_reference/SecondBrain/' }
+        telescope_builtin.find_files { cwd = '~/Project_reference/SecondBrain/Main Notes' }
       end, { desc = '[O]bsidian [F]iles' })
 
       -- live grep main notes
       vim.keymap.set('n', '<leader>og', function()
-        telescope_builtin.live_grep { cwd = '~/Project_reference/SecondBrain/' }
+        telescope_builtin.live_grep { cwd = '~/Project_reference/SecondBrain/Main Notes' }
       end, { desc = '[O]bsidian [G]rep' })
     end,
   },
