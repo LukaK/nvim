@@ -45,7 +45,7 @@ return {
 
       vim.keymap.set('n', '<leader>ot', format_title, { desc = '[O]bsidian [T]itle' })
       vim.keymap.set('n', '<leader>oo', ':ObsidianOpen<cr>', { desc = '[O]bsidian [O]pen' })
-      vim.keymap.set('n', '<leader>oc', ':ObsidianNew<cr>', { desc = '[O]bsidian [N]new' })
+      vim.keymap.set('n', '<leader>oc', ':ObsidianNew <cr><cr>', { desc = '[O]bsidian [C]reate' })
 
       -- create new note
       vim.keymap.set('n', '<leader>on', function()
