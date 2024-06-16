@@ -50,6 +50,22 @@ return {
         vim.cmd 'nohlsearch'
       end
 
+      local function format_literature_meta_title()
+        vim.cmd 'g/^title: .*$/s/[-a-zA-Z1-9]*_//e'
+        vim.cmd 'g/^title: .*$/s/-/ /ge'
+        vim.cmd 'g/^title: .*$/s/\\(\\w\\+\\)/\\u\\1/ge'
+        vim.cmd 's/^Title:/title:/e'
+        vim.cmd 'nohlsearch'
+      end
+
+      local function format_literature_meta_author()
+        vim.cmd 'g/^author: .*$/s/_[-a-zA-Z1-9]*$//e'
+        vim.cmd 'g/^author: .*$/s/-/ /ge'
+        vim.cmd 'g/^author: .*$/s/\\(\\w\\+\\)/\\u\\1/ge'
+        vim.cmd 's/^Author:/Author:/e'
+        vim.cmd 'nohlsearch'
+      end
+
       vim.keymap.set('n', '<leader>oo', ':ObsidianOpen<cr>', { desc = '[O]bsidian [O]pen' })
       vim.keymap.set('n', '<leader>oc', ':ObsidianNew <cr><cr>', { desc = '[O]bsidian [C]reate' })
 
@@ -63,6 +79,8 @@ return {
       vim.keymap.set('n', '<leader>ol', function()
         vim.cmd 'ObsidianTemplate Literature Note'
         format_literature_title()
+        format_literature_meta_title()
+        format_literature_meta_author()
       end, { desc = '[O]bsidian [L]iterature' })
 
       vim.keymap.set('n', '<leader>oi', function()
