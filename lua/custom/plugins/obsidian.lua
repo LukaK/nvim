@@ -43,6 +43,13 @@ return {
         vim.cmd 'nohlsearch'
       end
 
+      local function format__alias()
+        vim.cmd 'g/^alias: .*$/s/-/ /ge'
+        vim.cmd 'g/^alias: .*$/s/\\(\\w\\+\\)/\\u\\1/ge'
+        vim.cmd 's/^Alias:/alias:/e'
+        vim.cmd 'nohlsearch'
+      end
+
       local function format_literature_title()
         vim.cmd 'g/^# [-_a-zA-Z1-9]*$/s/[-a-zA-Z1-9]*_//e'
         vim.cmd 'g/^# [-_a-zA-Z1-9]*$/s/\\(\\w\\+\\)/\\u\\1/ge'
@@ -62,7 +69,15 @@ return {
         vim.cmd 'g/^author: .*$/s/_[-a-zA-Z1-9]*$//e'
         vim.cmd 'g/^author: .*$/s/-/ /ge'
         vim.cmd 'g/^author: .*$/s/\\(\\w\\+\\)/\\u\\1/ge'
-        vim.cmd 's/^Author:/Author:/e'
+        vim.cmd 's/^Author:/author:/e'
+        vim.cmd 'nohlsearch'
+      end
+
+      local function format_literature_meta_alias()
+        vim.cmd 'g/^alias: .*$/s/[-a-zA-Z1-9]*_//e'
+        vim.cmd 'g/^alias: .*$/s/-/ /ge'
+        vim.cmd 'g/^alias: .*$/s/\\(\\w\\+\\)/\\u\\1/ge'
+        vim.cmd 's/^Alias:/alias:/e'
         vim.cmd 'nohlsearch'
       end
 
@@ -76,6 +91,7 @@ return {
         vim.cmd 'g/^#/d'
         vim.cmd 'ObsidianTemplate Main Note'
         format_title()
+        format__alias()
       end, { desc = '[O]bsidian [N]ote' })
 
       -- create literature template
@@ -86,6 +102,7 @@ return {
         format_literature_title()
         format_literature_meta_title()
         format_literature_meta_author()
+        format_literature_meta_alias()
       end, { desc = '[O]bsidian [L]iterature' })
 
       vim.keymap.set('n', '<leader>oi', function()
