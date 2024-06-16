@@ -71,12 +71,17 @@ return {
 
       -- create new note
       vim.keymap.set('n', '<leader>on', function()
+        vim.cmd 'vsplit'
+        vim.cmd 'ObsidianNew'
+        vim.cmd 'g/^#/d'
         vim.cmd 'ObsidianTemplate Main Note'
         format_title()
       end, { desc = '[O]bsidian [N]ote' })
 
       -- create literature template
       vim.keymap.set('n', '<leader>ol', function()
+        vim.cmd 'ObsidianNew'
+        vim.cmd 'g/^#/d'
         vim.cmd 'ObsidianTemplate Literature Note'
         format_literature_title()
         format_literature_meta_title()
@@ -84,6 +89,8 @@ return {
       end, { desc = '[O]bsidian [L]iterature' })
 
       vim.keymap.set('n', '<leader>oi', function()
+        vim.cmd 'ObsidianNew'
+        vim.cmd 'g/^#/d'
         vim.cmd 'ObsidianTemplate Index'
         format_title()
       end, { desc = '[O]bsidian [I]ndex' })
