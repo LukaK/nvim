@@ -38,8 +38,15 @@ return {
 
       -- formatting title in notes, helper function
       local function format_title()
-        vim.cmd 'g/^# [-a-z1-9]*$/s/\\(\\w\\+\\)/\\u\\1/ge'
+        vim.cmd 'g/^# [-a-zA-Z1-9]*$/s/\\(\\w\\+\\)/\\u\\1/ge'
         vim.cmd 'g/^# [-a-zA-Z1-9]*$/s/-/ /ge'
+        vim.cmd 'nohlsearch'
+      end
+
+      local function format_literature_title()
+        vim.cmd 'g/^# [-_a-zA-Z1-9]*$/s/[-a-zA-Z1-9]*_//e'
+        vim.cmd 'g/^# [-_a-zA-Z1-9]*$/s/\\(\\w\\+\\)/\\u\\1/ge'
+        vim.cmd 'g/^# [-_a-zA-Z1-9]*$/s/-/ /ge'
         vim.cmd 'nohlsearch'
       end
 
@@ -55,7 +62,7 @@ return {
       -- create literature template
       vim.keymap.set('n', '<leader>ol', function()
         vim.cmd 'ObsidianTemplate Literature Note'
-        format_title()
+        format_literature_title()
       end, { desc = '[O]bsidian [L]iterature' })
 
       vim.keymap.set('n', '<leader>oi', function()
