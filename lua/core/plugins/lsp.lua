@@ -302,7 +302,6 @@ return {
       'black', -- Used to format Python code
       'isort', -- Used to format Python imports
       'hclfmt', -- Used to format hcl code
-      'vale', -- Used to lint Markdown files
       'hadolint', -- Linter docker file
       'tflint', -- Linter terraform
       'jsonlint', -- Linter json
