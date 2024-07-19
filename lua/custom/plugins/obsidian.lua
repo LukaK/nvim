@@ -13,6 +13,10 @@ return {
             name = 'personal',
             path = '~/Project_reference/SecondBrain',
           },
+          {
+            name = 'documentation',
+            path = '~/Project_reference/Documentation/',
+          },
         },
 
         -- disable auto formatting of notes ( headers )
