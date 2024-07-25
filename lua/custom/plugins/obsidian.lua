@@ -47,7 +47,7 @@ return {
         vim.cmd 'nohlsearch'
       end
 
-      local function format__alias()
+      local function format_alias()
         vim.cmd 'g/^alias: .*$/s/-/ /ge'
         vim.cmd 'g/^alias: .*$/s/\\(\\w\\+\\)/\\u\\1/ge'
         vim.cmd 's/^Alias:/alias:/e'
@@ -95,7 +95,7 @@ return {
         vim.cmd 'g/^#/d'
         vim.cmd 'ObsidianTemplate Main Note'
         format_title()
-        format__alias()
+        format_alias()
       end, { desc = '[O]bsidian [N]ote' })
 
       -- create literature template
