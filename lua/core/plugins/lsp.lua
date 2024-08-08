@@ -300,6 +300,7 @@ return {
     vim.list_extend(ensure_installed, {
       'stylua', -- Used to format Lua code
       'black', -- Used to format Python code
+      'trivy', -- security scanning
       'isort', -- Used to format Python imports
       'hclfmt', -- Used to format hcl code
       'hadolint', -- Linter docker file
