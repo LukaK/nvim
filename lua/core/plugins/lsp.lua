@@ -278,7 +278,7 @@ return {
 
       -- NOTE: autocompletion is not working (https://github.com/williamboman/mason-lspconfig.nvim/issues/224)
       terraformls = {
-        filetypes = { 'terraform' },
+        filetypes = { 'terraform', 'hcl' },
       },
       ansiblels = {},
       helm_ls = {},
