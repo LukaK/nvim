@@ -120,3 +120,6 @@ SDLC
 terragrunt
 xml
 apis
+ArgoCD
+crd
+toml
