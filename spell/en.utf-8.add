@@ -124,3 +124,5 @@ ArgoCD
 crd
 toml
 Karpenter
+saas
+siem
