@@ -12,6 +12,9 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
+  --
+  -- Load snacks, umbrela for multiple plugins
+  require 'core.plugins.snacks',
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
@@ -86,7 +89,6 @@ require('lazy').setup({
   require 'core.plugins.nvim-treesitter',
 
   -- require 'core.plugins.debug',
-  require 'core.plugins.indent_line',
   require 'core.plugins.lint',
   require 'core.plugins.autopairs',
   require 'core.plugins.neo-tree',
