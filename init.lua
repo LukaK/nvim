@@ -23,6 +23,9 @@ require('lazy').setup({
   -- Use `opts = {}` to force a plugin to be loaded, equivalent to require('plugin').setup({})
   { 'numToStr/Comment.nvim', opts = {} },
 
+  -- navigation between vim and tmux
+  { 'christoomey/vim-tmux-navigator', lazy = false },
+
   -- Useful plugin to show you pending keybinds.
   require 'core.plugins.which-key',
 
