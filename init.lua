@@ -24,7 +24,7 @@ require('lazy').setup({
   { 'numToStr/Comment.nvim', opts = {} },
 
   -- navigation between vim and tmux
-  { 'christoomey/vim-tmux-navigator', lazy = false },
+  require 'core.plugins.vim-tmux-navigator',
 
   -- Useful plugin to show you pending keybinds.
   require 'core.plugins.which-key',
