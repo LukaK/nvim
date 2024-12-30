@@ -33,3 +33,6 @@ vim.g.loaded_matchparen = 1
 
 -- use English as main language
 vim.g.language = 'en_US.utf-8'
+
+-- vim tmux navigator
+vim.g.tmux_navigator_no_mappings = 1
