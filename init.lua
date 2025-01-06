@@ -33,6 +33,7 @@ require('lazy').setup({
   require 'core.plugins.telescope',
 
   -- LSP Configuration & Plugins ( Language Servers )
+  require 'core.plugins.yaml-companion',
   require 'core.plugins.lsp',
 
   -- Autoformat
