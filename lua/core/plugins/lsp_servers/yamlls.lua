@@ -37,8 +37,8 @@ return {
 
           -- aws
           'AWS CloudFormation',
-          'AWS CloudFormation Serverless Application Model (SAM)',
           'AWS SAM CLI Samconfig',
+          'AWS CloudFormation Serverless Application Model (SAM)', -- redefined below
 
           -- tools
           'yamllint', -- file types: .yamllint, **/.yamllint.(yaml,yml)
@@ -68,8 +68,8 @@ return {
           ['Ansible Requirements'] = {
             url = 'https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/requirements.json',
             name = 'Ansible Requirements',
-            fileMatch = { 'requirements.yml', 'requirements.yaml' },
             description = 'Ansible requirements file schema',
+            fileMatch = { 'requirements.yml', 'requirements.yaml' },
           },
         },
 
