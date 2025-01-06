@@ -214,84 +214,8 @@ return {
         },
       },
 
-      -- TODO: Customize this
-      yamlls = {
-        filetypes = { 'yaml', 'yml' },
-        settings = {
-          yaml = {
-            schemaStore = {
-              -- You must disable built-in schemaStore support if you want to use
-              -- schemastore plugin and its advanced options like `ignore`.
-              enable = false,
-              url = '',
-            },
-            schemas = require('schemastore').yaml.schemas {
-
-              -- TODO: Select explicitly or define without schemastore
-              -- select = {
-              --   'kustomization.yaml',
-              --   'docker-compose.yml',
-              -- },
-
-              extra = {
-                url = 'https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/argoproj.io/application_v1alpha1.json',
-                name = 'Argo CD Application',
-                fileMatch = 'argocd-application.yaml',
-              },
-            },
-            customTags = {
-              '!And scalar',
-              '!And map',
-              '!And sequence',
-              '!If scalar',
-              '!If map',
-              '!If sequence',
-              '!Not scalar',
-              '!Not map',
-              '!Not sequence',
-              '!Equals scalar',
-              '!Equals map',
-              '!Equals sequence',
-              '!Or scalar',
-              '!Or map',
-              '!Or sequence',
-              '!FindInMap scalar',
-              '!FindInMap mappping',
-              '!FindInMap sequence',
-              '!Base64 scalar',
-              '!Base64 map',
-              '!Base64 sequence',
-              '!Cidr scalar',
-              '!Cidr map',
-              '!Cidr sequence',
-              '!Ref scalar',
-              '!Ref map',
-              '!Ref sequence',
-              '!Sub scalar',
-              '!Sub map',
-              '!Sub sequence',
-              '!GetAtt scalar',
-              '!GetAtt map',
-              '!GetAtt sequence',
-              '!GetAZs scalar',
-              '!GetAZs map',
-              '!GetAZs sequence',
-              '!ImportValue scalar',
-              '!ImportValue map',
-              '!ImportValue sequence',
-              '!Select scalar',
-              '!Select map',
-              '!Select sequence',
-              '!Split scalar',
-              '!Split map',
-              '!Split sequence',
-              '!Join scalar',
-              '!Join map',
-              '!Join sequence',
-            },
-          },
-        },
-      },
+      -- yamlls configuration
+      yamlls = require 'core.plugins.lsp_servers.yamlls',
 
       bashls = {},
       dockerls = {},
@@ -300,7 +224,6 @@ return {
       terraformls = {
         filetypes = { 'terraform', 'hcl' },
       },
-      ansiblels = {},
       helm_ls = {},
       marksman = {}, -- markdown language server
       pyright = {},
