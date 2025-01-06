@@ -6,7 +6,12 @@ return require('yaml-companion').setup {
     cloud_init = { enabled = true },
   },
 
-  schemas = {},
+  schemas = {
+    {
+      name = 'Argo CD Application',
+      uri = 'https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/argoproj.io/application_v1alpha1.json',
+    },
+  },
 
   lspconfig = {
 
