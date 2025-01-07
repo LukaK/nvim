@@ -64,7 +64,17 @@ return {
       -- pickers = {}
       defaults = {
         mappings = {
-          i = { ['<c-s>'] = 'select_vertical' },
+          i = {
+            -- open file in a split screen
+            ['<c-s>'] = 'select_vertical',
+          },
+          n = {
+            -- close buffers with letter d
+            ['d'] = require('telescope.actions').delete_buffer,
+
+            -- close telescope with q in normal mode
+            ['q'] = require('telescope.actions').close,
+          },
         },
       },
       extensions = {
