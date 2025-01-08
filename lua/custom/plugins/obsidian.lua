@@ -5,6 +5,9 @@ return {
     dependencies = {
       'nvim-lua/plenary.nvim',
     },
+
+    -- lazy load the plugin on keys
+    keys = { '<leader>oo', '<leader>on', '<leader>oi', '<leader>ol', '<leader>of', '<leader>og' },
     config = function()
       -- setup the plugin
       require('obsidian').setup {
