@@ -138,3 +138,6 @@ usb
 configuraiton
 virtualization
 gpu
+submodules
+lua
+hypervisor
