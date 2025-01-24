@@ -1,3 +1,6 @@
+--
+-- Helps with navigation betwee vim and tmux
+--
 return {
   'christoomey/vim-tmux-navigator',
   lazy = false,

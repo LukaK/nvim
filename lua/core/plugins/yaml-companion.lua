@@ -1,3 +1,7 @@
+--
+-- Kubernetes schemas autodetect and ui for selecting schemas explicitly
+--
+
 return {
   'someone-stole-my-name/yaml-companion.nvim',
   requires = {

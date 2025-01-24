@@ -1,4 +1,7 @@
+--
 -- Autocompletion
+--
+
 -- TODO: Fix completion keybinding for command line
 -- TODO: Fix warnings etc
 return {

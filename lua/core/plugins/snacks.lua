@@ -1,3 +1,7 @@
+--
+-- Umbrela plugin for multiple plugins
+--
+
 -- TODO: Setup rename with neotree
 return {
   'folke/snacks.nvim',
