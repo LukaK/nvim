@@ -218,7 +218,7 @@ return {
       },
 
       -- yamlls configuration
-      yamlls = require 'core.plugins.lsp_servers.yamlls',
+      yamlls = require 'plugins.lsp_servers.yamlls',
 
       bashls = {},
       dockerls = {},
