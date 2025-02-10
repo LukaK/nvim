@@ -13,7 +13,6 @@ require('lazy').setup({
 
   spec = {
     { import = 'core.plugins' },
-    { import = 'custom.plugins' },
   },
 }, {
   ui = {
