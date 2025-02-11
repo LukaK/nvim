@@ -2,7 +2,7 @@
 -- Umbrela plugin for multiple plugins
 --
 
--- TODO: Setup rename with neotree
+-- TODO: Setup rename with neotree, works with import statements
 return {
   'folke/snacks.nvim',
   priority = 1000,
@@ -25,11 +25,12 @@ return {
         enabled = false, -- disable highlighting of the current line
       },
     },
-    lazygit = { enabled = false }, -- TODO: Check if lazygit is usefull
-    statuscolumn = { enabled = false }, -- TODO: Find where existing status column is defined, check if you can disable your own configuraation of status column
-    terminal = { enabled = false }, -- TODO: Check if you can use it instead of toggle term
+    lazygit = { enabled = false }, -- TODO: Install lazygit and install neogin
+    statuscolumn = { enabled = false },
+    terminal = { enabled = false },
     dashboard = { enabled = false },
     scratch = { enabled = false },
     zen = { enabled = false },
   },
+  keys = {},
 }
