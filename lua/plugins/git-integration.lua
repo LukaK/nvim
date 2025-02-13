@@ -1,5 +1,6 @@
 -- TODO: Add DiffView
 -- TODO: Add which key registration to register keys
+-- TODO: add neogit.lua plugin for this
 
 return {
 
