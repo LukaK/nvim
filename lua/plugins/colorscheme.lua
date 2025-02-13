@@ -2,6 +2,7 @@
 -- colorscheme
 --
 
+-- FIX: Colors are not good too dark
 return {
   -- You can easily change to a different colorscheme.
   -- Change the name of the colorscheme plugin below, and then
@@ -12,14 +13,11 @@ return {
   lazy = false,
   priority = 1000, -- Make sure to load this before all the other start plugins.
   init = function()
-    -- Load the colorscheme here.
-    -- Like many other themes, this one has different styles, and you could load
-    -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-    vim.g.nord_contrast = true
+    vim.g.nord_contrast = true -- this is reponsible for different contrast in popup windows
     vim.g.nord_borders = true
     vim.g.nord_disable_background = false
     vim.g.nord_italic = false
-    vim.cmd.colorscheme 'nord'
+    require('nord').set()
 
     -- You can configure highlights by doing something like:
     -- vim.cmd.hi 'Comment gui=none'

@@ -2,13 +2,18 @@
 -- Umbrela plugin for multiple plugins
 --
 
--- TODO: Setup rename with neotree, works with import statements
 return {
   'folke/snacks.nvim',
   priority = 1000,
   lazy = false,
   ---@type snacks.Config
   opts = {
+    explorer = {
+      enabled = true,
+      layout = {
+        cycle = false,
+      },
+    },
     scope = { enabled = true },
     bigfile = { enabled = true },
     input = { enabled = true },
@@ -39,6 +44,13 @@ return {
         require('snacks').lazygit()
       end,
       desc = 'LazyGit',
+    },
+    {
+      '\\',
+      function()
+        require('snacks').explorer()
+      end,
+      desc = 'Open Snacks Explorer',
     },
   },
 }
