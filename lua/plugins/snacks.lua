@@ -25,12 +25,20 @@ return {
         enabled = false, -- disable highlighting of the current line
       },
     },
-    lazygit = { enabled = false }, -- TODO: Install lazygit and install neogin
+    lazygit = { enabled = true },
     statuscolumn = { enabled = false },
     terminal = { enabled = false },
     dashboard = { enabled = false },
     scratch = { enabled = false },
     zen = { enabled = false },
   },
-  keys = {},
+  keys = {
+    {
+      '<leader>lg',
+      function()
+        require('snacks').lazygit()
+      end,
+      desc = 'LazyGit',
+    },
+  },
 }
