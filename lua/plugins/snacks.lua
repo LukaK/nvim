@@ -8,12 +8,6 @@ return {
   lazy = false,
   ---@type snacks.Config
   opts = {
-    explorer = {
-      enabled = true,
-      layout = {
-        cycle = false,
-      },
-    },
     scope = { enabled = true },
     bigfile = { enabled = true },
     input = { enabled = true },
@@ -44,13 +38,6 @@ return {
         require('snacks').lazygit()
       end,
       desc = 'LazyGit',
-    },
-    {
-      '\\',
-      function()
-        require('snacks').explorer()
-      end,
-      desc = 'Open Snacks Explorer',
     },
   },
 }
