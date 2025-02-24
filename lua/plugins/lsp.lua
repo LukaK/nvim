@@ -18,6 +18,9 @@ return {
     -- used for completion, annotations and signatures of Neovim apis
     { 'folke/neodev.nvim', opts = {} },
     { 'b0o/schemastore.nvim' },
+
+    -- dependency for helm-ls server
+    { 'towolf/vim-helm', ft = 'helm'},
   },
   config = function()
     -- Brief aside: **What is LSP?**
@@ -227,7 +230,15 @@ return {
       terraformls = {
         filetypes = { 'terraform', 'hcl' },
       },
-      helm_ls = {},
+      helm_ls = {
+        settings = {
+          ['helm-ls'] = {
+            yamlls = {
+              path = "yaml-language-server",
+            }
+          }
+        }
+      },
       marksman = {}, -- markdown language server
       pyright = {},
     }
