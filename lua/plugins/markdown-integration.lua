@@ -15,9 +15,9 @@ return {
       'godlygeek/tabular',
     },
     ft = 'markdown',
-    config = function()
+    init = function()
       vim.g.vim_markdown_folding_disabled = 1
-    end,
+    end
   },
   {
     'iamcco/markdown-preview.nvim',
@@ -26,8 +26,8 @@ return {
     build = function()
       vim.fn['mkdp#util#install']()
     end,
-    config = function()
-      vim.keymap.set('n', '<leader>mp', ':MarkdownPreviewToggle<cr>', { desc = '[M]arkdown [P]review' })
-    end,
+    keys ={
+      {'<leader>mp', ':MarkdownPreviewToggle<cr>', desc = "[M]arkdown [P]review"}
+    }
   },
 }
