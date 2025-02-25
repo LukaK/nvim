@@ -20,6 +20,12 @@ return {
     -- - sr)'  - [S]urround [R]eplace [)] [']
     require('mini.surround').setup()
 
+    -- Add pairs of brackets and quotes automatically
+    require('mini.pairs').setup()
+
+    -- Commenting
+    require('mini.comment').setup()
+
     -- Simple and easy statusline.
     --  You could remove this setup call if you don't like it,
     --  and try some other statusline plugin
