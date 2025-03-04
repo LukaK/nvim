@@ -4,5 +4,6 @@
 
 return {
   'folke/which-key.nvim',
-  event = 'VimEnter', -- loads the plugin before all the UI elements are loaded
+  -- loads the plugin before all the UI elements are loaded
+  event = 'VimEnter',
 }

@@ -1,4 +1,3 @@
--- TODO: Setup toggleterm
 return {
   {
     'akinsho/toggleterm.nvim',
