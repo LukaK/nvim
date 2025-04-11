@@ -151,3 +151,7 @@ openvpn
 ssd
 hdd
 nvme
+unicode
+protobuf
+serializer
+etl
