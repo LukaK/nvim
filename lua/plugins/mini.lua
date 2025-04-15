@@ -20,8 +20,9 @@ return {
     -- - sr)'  - [S]urround [R]eplace [)] [']
     require('mini.surround').setup()
 
+    -- NOTE: nvim-autopairs is still better
     -- Add pairs of brackets and quotes automatically
-    require('mini.pairs').setup()
+    -- require('mini.pairs').setup()
 
     -- Commenting
     require('mini.comment').setup()
