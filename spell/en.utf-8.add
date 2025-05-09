@@ -156,3 +156,5 @@ protobuf
 serializer
 etl
 linter
+sql
+gui
