@@ -161,3 +161,4 @@ gui
 microservices
 grpc
 rpc
+monoid
