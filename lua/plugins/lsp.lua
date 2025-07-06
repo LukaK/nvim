@@ -185,7 +185,6 @@ return {
     local servers = {
       -- clangd = {},
       -- gopls = {},
-      -- pyright = {},
       -- rust_analyzer = {},
       -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
       --
@@ -240,7 +239,22 @@ return {
         }
       },
       marksman = {}, -- markdown language server
-      pyright = {},
+      pylsp = {
+        settings = {
+          pylsp = {
+            plugins = {
+              pyflakes = { enabled = false},
+              pycodestyle = { enabled = false},
+              autopep8 = { enabled = false},
+              yapf = { enabled = false},
+              mccabe = { enabled = false},
+              pylsp_mypy = { enabled = false},
+              pylsp_black = { enabled = false},
+              pylsp_isort = { enabled = false},
+            }
+          }
+        }
+      }
     }
 
     -- Ensure the servers and tools above are installed
