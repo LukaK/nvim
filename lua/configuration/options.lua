@@ -8,13 +8,13 @@
 
 -- general tab settings ( vim-sleut plugin manages this now )
 -- number of visual spaces per TAB
--- vim.opt.tabstop = 4
+vim.opt.tabstop = 4
 -- number of spaces in tab when editing
--- vim.opt.softtabstop = 4
+vim.opt.softtabstop = 4
 -- number of spaces to use for autoinden
--- vim.opt.shiftwidth = 4
+vim.opt.shiftwidth = 4
 -- expand tab to spaces so that tabs are space
--- vim.opt.expandtab = true
+vim.opt.expandtab = true
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true

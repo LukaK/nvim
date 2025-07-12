@@ -238,7 +238,9 @@ return {
           }
         }
       },
-      marksman = {}, -- markdown language server
+      marksman = {
+        filetypes = { 'md' },
+      }, -- markdown language server
       pylsp = {
         settings = {
           pylsp = {
