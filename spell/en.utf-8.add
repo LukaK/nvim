@@ -162,3 +162,5 @@ microservices
 grpc
 rpc
 monoid
+snmp
+ui
