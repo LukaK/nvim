@@ -38,11 +38,11 @@ return {
           },
         },
       },
-      extensions = {
-        ['ui-select'] = {
-          require('telescope.themes').get_dropdown(),
-        },
-      }
+      -- extensions = {
+      --   ['ui-select'] = {
+      --     require('telescope.themes').get_dropdown(),
+      --   },
+      -- }
   },
   keys = {
     {'<leader>sd', require('telescope.builtin').diagnostics, mode = 'n', desc = '[S]earch [D]iagnostics' },
@@ -60,6 +60,10 @@ return {
   },
   config = function(_, opts)
     require('telescope').setup(opts)
+    local themes = require('telescope.themes')
+
+    -- Inject extension config that needed `themes`
+    opts.extensions['ui-select'] = themes.get_dropdown()
 
     -- Enable Telescope extensions if they are installed
     pcall(require('telescope').load_extension, 'fzf')
