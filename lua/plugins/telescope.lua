@@ -45,7 +45,7 @@ return {
       -- }
   },
   keys = {
-    {'<leader>sd', '<cmd>Telescope diagnostics<cr>', mode = 'n', desc = '[S]earch [D]iagnostics' },
+    -- {'<leader>sd', '<cmd>Telescope diagnostics<cr>', mode = 'n', desc = '[S]earch [D]iagnostics' },
     { '<leader>sh', '<cmd>Telescope help_tags<cr>',   desc = '[S]earch [H]elp' },
     { '<leader>sk', '<cmd>Telescope keymaps<cr>',     desc = '[S]earch [K]eymaps' },
     { '<leader>sf', '<cmd>Telescope find_files<cr>',  desc = '[S]earch [F]iles' },
@@ -66,7 +66,7 @@ return {
       desc = '[S]earch [N]eovim files'
     },
 
-    -- {'<leader>sd', require('telescope.builtin').diagnostics, mode = 'n', desc = '[S]earch [D]iagnostics' },
+    {'<leader>sd', function() require('telescope.builtin').diagnostics() end, mode = 'n', desc = '[S]earch [D]iagnostics' },
     -- {'<leader>sh', require('telescope.builtin').help_tags, mode = 'n', desc = '[S]earch [H]elp' },
     -- {'<leader>sk', require('telescope.builtin').keymaps, mode = 'n', desc = '[S]earch [K]eymaps' },
     -- {'<leader>sf', require('telescope.builtin').find_files, mode = 'n', desc = '[S]earch [F]iles' },
