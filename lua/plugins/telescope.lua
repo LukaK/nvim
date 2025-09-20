@@ -29,10 +29,12 @@ return {
           },
           n = {
             -- close buffers with letter d
-            ['d'] = require('telescope.actions').delete_buffer,
+            -- ['d'] = require('telescope.actions').delete_buffer,
+            ['d'] = 'delete_buffer',
 
             -- close telescope with q in normal mode
-            ['q'] = require('telescope.actions').close,
+            -- ['q'] = require('telescope.actions').close,
+            ['q'] = 'close',
           },
         },
       },
