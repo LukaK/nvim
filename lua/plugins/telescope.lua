@@ -36,6 +36,7 @@ return {
           },
         },
       },
+      extensions = {}
   },
   keys = {
     {'<leader>sd', '<cmd>Telescope diagnostics<cr>', mode = 'n', desc = '[S]earch [D]iagnostics' },
