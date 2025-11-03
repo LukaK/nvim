@@ -173,3 +173,4 @@ Pci
 pci
 #ifercation
 nixos
+sql
