@@ -48,6 +48,19 @@ vim.keymap.set('x', '/', [[:<C-U>call feedkeys('/\%>'.(line("'<")-1).'l\%<'.(lin
 vim.keymap.set('n', '<F3>', ':<C-U> set spell!<CR>', { desc = 'Enable spell checking' })
 vim.keymap.set('i', '<F3>', ':<C-U> set spell!<CR>', { desc = 'Enable spell checking' })
 
+-- github commands
+-- create pull request
+vim.api.nvim_create_user_command(
+  'PRWeb',
+  function()
+    vim.fn.system('git push -u origin HEAD')
+    vim.fn.system('gh pr create --web')
+    print("Opened PR creation page in your browser")
+  end,
+  { desc = 'Create and open GitHub PR in browser' }
+)
+
+
 -- Close a buffer and switching to another buffer, do not close the
 -- window, see https://stackoverflow.com/q/4465095/6064933
 -- vim.keymap.set("n", "\\d", ":<C-U>bprevious <bar> bdelete #<CR>", { desc = 'Close a buffer and switch' })
