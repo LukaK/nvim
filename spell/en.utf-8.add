@@ -174,3 +174,7 @@ pci
 #ifercation
 nixos
 sql
+gitops
+cname
+stdout
+stderr
