@@ -51,13 +51,32 @@ vim.keymap.set('i', '<F3>', ':<C-U> set spell!<CR>', { desc = 'Enable spell chec
 -- github commands
 -- create pull request
 vim.api.nvim_create_user_command(
-  'PRWeb',
+  'PRCreate',
   function()
-    vim.fn.system('git push -u origin HEAD')
-    vim.fn.system('gh pr create --web')
-    print("Opened PR creation page in your browser")
+    -- Get current branch name
+    local branch = vim.fn.system('git rev-parse --abbrev-ref HEAD'):gsub("%s+", "")
+    -- Clean up branch name for a nice title
+    local title = branch
+      :gsub("^[^/]+/", "")   -- remove prefix like feature/, fix/, etc.
+      :gsub("[-_]+", " ")    -- replace - and _ with spaces
+      :gsub("^%l", string.upper)  -- capitalize first letter
+
+    -- Get log messages for PR body
+    local log = vim.fn.system('git log origin/main..HEAD --pretty=format:"- %s%n%b"')
+    if vim.v.shell_error ~= 0 then
+      print("❌ Failed to get git log")
+      return
+    end
+
+    -- Escape quotes for shell
+    log = log:gsub('"', '\\"')
+
+    -- Create PR and open in browser
+    local cmd = 'gh pr create --title "' .. title .. '" --body "' .. log .. '" --web'
+    vim.fn.system(cmd)
+    print("🚀 Created PR from branch '" .. branch .. "' and opened in browser!")
   end,
-  { desc = 'Create and open GitHub PR in browser' }
+  { desc = 'Create GitHub PR from commits, using branch name as title' }
 )
 
 
