@@ -48,6 +48,7 @@ return {
     { '<leader>sr', '<cmd>Telescope resume<cr>',      desc = '[S]earch [R]esume' },
     { '<leader>st', '<cmd>Telescope builtin<cr>',     desc = '[S]earch Select [T]elescope' },
     { '<leader>s.', '<cmd>Telescope oldfiles<cr>',    desc = '[S]earch Recent Files' },
+    {'<leader>sb', '<cmd>Telescope git_branches<cr>', mode = 'n', desc = '[S]earch [B]ranch' },
     { '<leader><leader>', '<cmd>Telescope buffers<cr>', desc = '[ ] Find existing buffers' },
     {
       '<leader>s/',
