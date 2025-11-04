@@ -42,7 +42,21 @@ return {
     {'<leader>sd', '<cmd>Telescope diagnostics<cr>', mode = 'n', desc = '[S]earch [D]iagnostics' },
     { '<leader>sh', '<cmd>Telescope help_tags<cr>',   desc = '[S]earch [H]elp' },
     { '<leader>sk', '<cmd>Telescope keymaps<cr>',     desc = '[S]earch [K]eymaps' },
-    { '<leader>sf', '<cmd>Telescope find_files<cr>',  desc = '[S]earch [F]iles' },
+
+    -- smart files: git_files if inside a repo, else find_files
+    {
+      '<leader>sf',
+      function()
+        local builtin = require('telescope.builtin')
+        local ok = pcall(builtin.git_files, { show_untracked = true })
+        if not ok then
+          builtin.find_files()
+        end
+      end,
+      desc = '[S]earch [F]iles (git-aware)',
+    },
+
+
     { '<leader>sw', '<cmd>Telescope grep_string<cr>', desc = '[S]earch current [W]ord' },
     { '<leader>sg', '<cmd>Telescope live_grep<cr>',   desc = '[S]earch by [G]rep' },
     { '<leader>sr', '<cmd>Telescope resume<cr>',      desc = '[S]earch [R]esume' },
